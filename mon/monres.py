@@ -18,7 +18,7 @@ def callback(ch, method, parameters, body):
     col = db[SERVER_COLLECTION]
     x = body.decode("utf-8").split("|")
     print(x)
-    y = col.insert_one({"title": x[0], "author": x[1], "views": x[2], "href": x[3]})
+    y = col.insert_one({"id": x[0], "title": x[1], "author": x[2], "href": x[3], "date": x[4]})
 
 
 def get_data() -> None:

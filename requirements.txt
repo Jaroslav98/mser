@@ -1,0 +1,4 @@
+pika
+selenium
+webdriver_manager
+pymongo

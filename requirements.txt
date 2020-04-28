@@ -2,3 +2,12 @@ pika
 selenium
 webdriver_manager
 pymongo
+flask
+flask-graphql
+flask-migrate
+flask-sqlalchemy
+graphene
+graphene-sqlalchemy
+flask_mongoalchemy
+graphene_mongo
+mongoengine

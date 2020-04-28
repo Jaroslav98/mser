@@ -51,7 +51,7 @@ def get_data() -> None:
                 first_article = elem_table_title.text
             channel.basic_publish(exchange='',
                                   routing_key=RABBIT_QUEUE,
-                                  body='|'.join([str(article_count), elem_table_title.text, elem_table_author.text,
+                                  body='|'.join([elem_table_title.text, elem_table_author.text,
                                                  elem_table_href, elem_table_date]))
             print(f'\t{article_count} {elem_table_title.text}')
             print(f'\tlast_news={last_news}')

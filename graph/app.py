@@ -1,4 +1,4 @@
-# 127.0.0.1:5000
+# http://127.0.0.1:5000/graphql
 import graphene
 import mongoengine
 from flask import Flask
@@ -6,7 +6,7 @@ from flask_graphql import GraphQLView
 from graphene.relay import Node
 from graphene_mongo import MongoengineObjectType, MongoengineConnectionField
 from mongoengine import Document
-from mongoengine.fields import StringField
+from mongoengine.fields import StringField, IntField
 
 # Configs
 app = Flask(__name__)
@@ -20,11 +20,11 @@ mongoengine.connect('verge', alias='default')
 class articles(Document):
     meta = {'db_alias': 'default', 'collection': 'articles'}
     _id = StringField(required=True)
-    id = StringField(required=True)
     title = StringField(required=True)
     author = StringField(required=True)
     href = StringField(required=True)
     date = StringField(required=True)
+    id = IntField(required=True)
 
 
 # Schema Objects

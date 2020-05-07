@@ -11,3 +11,6 @@ graphene-sqlalchemy
 flask_mongoalchemy
 graphene_mongo
 mongoengine
+requests
+redis_decorator
+redis

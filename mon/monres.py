@@ -5,6 +5,7 @@ RABBIT_QUEUE = 'newstr'
 SERVER_HOST = 'mongodb://localhost:27017/'
 SERVER_DB = 'verge'
 SERVER_COLLECTION = 'articles'
+article_id = 1
 
 
 def callback(ch, method, parameters, body):
@@ -12,13 +13,15 @@ def callback(ch, method, parameters, body):
     Put data in Mongo DB.
     :return: None
     """
+    global article_id
     print(" [x] Received %r" % body.decode("utf-8"))
     client = MongoClient(SERVER_HOST)
     db = client[SERVER_DB]
     col = db[SERVER_COLLECTION]
     x = body.decode("utf-8").split("|")
     print(x)
-    y = col.insert_one({"title": x[0], "author": x[1], "href": x[2], "date": x[3]})
+    y = col.insert_one({"title": x[0], "author": x[1], "href": x[2], "date": x[3], 'id': article_id})
+    article_id += 1
 
 
 def get_data() -> None:

@@ -14,3 +14,4 @@ mongoengine
 requests
 redis_decorator
 redis
+PyQt5

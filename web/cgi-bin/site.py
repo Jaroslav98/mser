@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # python3 -m http.server --cgi
+# http://localhost:8000/cgi-bin/site.py
 
 from client1 import get_articles
 
@@ -21,6 +22,6 @@ print('<form action="form.py" method="get">')
 for i in range(len(id_list)):
     print(f"<a href='{href_list[i]}'>{title_list[i]}</a> {new_line}")
     print(f'<fieldset><div class="some-class">'
-          f'{like.format(i=i, article_id=id_list[i])}  {dislike.format(i=i, article_id=id_list[i])}</div></fieldset>')
+          f'{like.format(i=i, article_id=title_list[i])}  {dislike.format(i=i, article_id=title_list[i])}</div></fieldset>')
 
 print(f'{submit.format(i=i)}</form>')
